@@ -1,0 +1,68 @@
+{
+  "app": {
+    "title": "Escáner de documentos",
+    "description": "Mejora el contraste de fotos de documentos desde el navegador. Todo se procesa en tu dispositivo.",
+    "tagline": "Mejora el contraste de tus documentos. Todo ocurre en tu dispositivo: nada se sube a ningún servidor."
+  },
+  "actions": {
+    "openImage": "Abrir imagen",
+    "camera": "Cámara",
+    "stopCamera": "Cerrar cámara",
+    "takePhoto": "Hacer foto",
+    "showOriginal": "Ver original",
+    "download": "Descargar",
+    "reset": "Restablecer",
+    "rotateLeft": "↺ Girar izquierda",
+    "rotateRight": "↻ Girar derecha",
+    "crop": "Recortar",
+    "applyCrop": "Aplicar recorte",
+    "cancelCrop": "Cancelar",
+    "restore": "Restaurar original"
+  },
+  "stage": {
+    "emptyTitle": "Elige una imagen o usa la cámara",
+    "emptyHint": "También puedes arrastrar una imagen hasta aquí.",
+    "previewLabel": "Vista previa del documento",
+    "live": "En directo"
+  },
+  "crop": {
+    "handle": "Esquina {n} del recorte"
+  },
+  "panel": {
+    "presets": "Estilo",
+    "adjustments": "Ajustes",
+    "format": "Formato de descarga"
+  },
+  "presets": {
+    "original": "Original",
+    "document": "Documento",
+    "vivid": "Color vivo",
+    "gray": "Grises",
+    "blackWhite": "Blanco y negro"
+  },
+  "controls": {
+    "whiteBalance": "Balance de blancos",
+    "illumination": "Corregir sombras",
+    "clahe": "Contraste local",
+    "levels": "Niveles automáticos",
+    "contrast": "Contraste",
+    "saturation": "Saturación"
+  },
+  "status": {
+    "processing": "Procesando…",
+    "loaded": "Imagen cargada: {width}×{height} px",
+    "saved": "Descargada: {name}",
+    "cropHint": "Arrastra las 4 esquinas hasta los bordes del documento."
+  },
+  "errors": {
+    "imageLoad": "No se pudo abrir ese archivo como imagen.",
+    "notAnImage": "El archivo elegido no es una imagen.",
+    "cameraUnsupported": "Este navegador no permite usar la cámara (hace falta HTTPS o localhost).",
+    "cameraDenied": "Has denegado el permiso de la cámara. Actívalo en los ajustes del navegador.",
+    "cameraNotFound": "No se ha encontrado ninguna cámara.",
+    "cameraFailed": "No se pudo iniciar la cámara.",
+    "export": "No se pudo generar la imagen para descargar.",
+    "cropInvalid": "Los 4 puntos no forman un cuadrilátero válido. Colócalos en las esquinas del documento.",
+    "generic": "Algo ha fallado. Inténtalo de nuevo."
+  }
+}

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" class="is-loading">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="Boost the contrast of document photos right in your browser." />
+    <title>Document Scanner</title>
+    <link rel="stylesheet" href="style/tokens.css" />
+    <link rel="stylesheet" href="style/layout.css" />
+    <link rel="stylesheet" href="style/components.css" />
+    <noscript><style>.is-loading body { visibility: visible !important; }</style></noscript>
+  </head>
+  <body>
+    <header class="topbar">
+      <h1 data-i18n="app.title">Document Scanner</h1>
+      <p data-i18n="app.tagline">Boost the contrast of your documents. Everything happens on your device.</p>
+    </header>
+
+    <main class="workspace">
+      <section class="stage-column">
+        <div class="stage" id="stage">
+          <div class="stage__view" id="stage-view">
+            <canvas id="preview" hidden data-i18n-attr="aria-label:stage.previewLabel" aria-label="Document preview"></canvas>
+          </div>
+          <span class="badge" id="live-badge" hidden data-i18n="stage.live">Live</span>
+          <div class="stage__empty" id="empty-state">
+            <p class="stage__title" data-i18n="stage.emptyTitle">Pick an image or use the camera</p>
+            <p class="stage__hint" data-i18n="stage.emptyHint">You can also drag an image here.</p>
+          </div>
+        </div>
+
+        <div class="toolbar">
+          <button type="button" class="btn btn--primary" id="btn-open" data-i18n="actions.openImage">Open image</button>
+          <button type="button" class="btn" id="btn-camera" data-i18n="actions.camera">Camera</button>
+          <button type="button" class="btn btn--primary" id="btn-capture" hidden data-i18n="actions.takePhoto">Take photo</button>
+          <button type="button" class="btn" id="btn-original" aria-pressed="false" disabled data-i18n="actions.showOriginal">Show original</button>
+        </div>
+
+        <div class="toolbar" id="edit-tools" hidden>
+          <button type="button" class="btn" id="btn-rotate-left" data-i18n="actions.rotateLeft">&#8634; Rotate left</button>
+          <button type="button" class="btn" id="btn-rotate-right" data-i18n="actions.rotateRight">&#8635; Rotate right</button>
+          <button type="button" class="btn" id="btn-crop" data-i18n="actions.crop">Crop</button>
+          <button type="button" class="btn btn--primary" id="btn-apply-crop" hidden data-i18n="actions.applyCrop">Apply crop</button>
+          <button type="button" class="btn" id="btn-cancel-crop" hidden data-i18n="actions.cancelCrop">Cancel</button>
+          <button type="button" class="btn btn--quiet" id="btn-restore" disabled data-i18n="actions.restore">Restore original</button>
+        </div>
+
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </section>
+
+      <aside class="panel">
+        <section class="panel__section">
+          <h2 data-i18n="panel.presets">Style</h2>
+          <div class="chips" id="presets"></div>
+        </section>
+
+        <section class="panel__section">
+          <h2 data-i18n="panel.adjustments">Adjustments</h2>
+          <div class="sliders" id="sliders"></div>
+          <button type="button" class="btn btn--quiet" id="btn-reset" data-i18n="actions.reset">Reset</button>
+        </section>
+
+        <section class="panel__section panel__section--download">
+          <label class="field">
+            <span data-i18n="panel.format">Download format</span>
+            <select id="format">
+              <option value="png">PNG</option>
+              <option value="jpeg">JPEG</option>
+            </select>
+          </label>
+          <button type="button" class="btn btn--primary btn--block" id="btn-download" disabled data-i18n="actions.download">Download</button>
+        </section>
+      </aside>
+    </main>
+
+    <!-- Fuente de la cámara: invisible pero "presente" para que el navegador siga entregando fotogramas. -->
+    <video id="camera-video" class="camera-source" playsinline muted aria-hidden="true"></video>
+    <input type="file" id="file-input" accept="image/*" hidden />
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

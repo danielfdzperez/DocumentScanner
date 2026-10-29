@@ -1,0 +1,110 @@
+/* Estructura de la página: móvil primero, dos columnas en pantallas anchas. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Oculta la página hasta tener los textos traducidos (evita ver un idioma y luego el otro). */
+html.is-loading body {
+  visibility: hidden;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.5 var(--font);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.topbar {
+  padding: 20px var(--gutter) 8px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+.topbar p {
+  margin: 4px 0 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.workspace {
+  display: grid;
+  gap: var(--gap);
+  padding: var(--gap) var(--gutter) 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 900px) {
+  .workspace {
+    grid-template-columns: minmax(0, 1fr) 320px;
+    align-items: start;
+  }
+
+  .panel {
+    position: sticky;
+    top: var(--gap);
+  }
+}
+
+.stage-column {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+}
+
+/* En móvil la vista previa se queda fija arriba para ver el efecto mientras se mueven los sliders.
+   `display: contents` hace que el escenario sea hijo directo de .workspace y pueda quedarse "pegado"
+   durante todo el scroll de la página. */
+@media (max-width: 899px) {
+  /* Flex en vez de grid: en un grid el "pegado" quedaría limitado a la celda del propio escenario. */
+  .workspace {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stage-column {
+    display: contents;
+  }
+
+  /* `.workspace .stage` para ganar a `position: relative` de components.css (se carga después). */
+  .workspace .stage {
+    position: sticky;
+    top: 8px;
+    z-index: 2;
+    min-height: 160px;
+    box-shadow: 0 6px 12px -6px rgb(0 0 0 / 0.35);
+  }
+
+  .stage canvas {
+    max-height: 38vh;
+  }
+}
+
+/* El elemento <video> debe estar en el documento para entregar fotogramas, pero no se ve. */
+.camera-source {
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}

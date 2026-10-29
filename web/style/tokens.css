@@ -1,0 +1,39 @@
+/* Variables de diseño: colores, espacios, radios. Todo lo demás las usa. */
+:root {
+  color-scheme: light dark;
+
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --bg: #f4f2ee;
+  --surface: #ffffff;
+  --surface-sunken: #e9e6e0;
+  --text: #1d1b18;
+  --text-muted: #6a655d;
+  --border: #d8d3ca;
+  --accent: #1f5c4a;
+  --accent-hover: #174a3b;
+  --accent-contrast: #ffffff;
+  --danger: #a3261f;
+
+  --radius: 10px;
+  --radius-sm: 6px;
+  --gap: 16px;
+  --gutter: max(16px, env(safe-area-inset-left));
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.06), 0 4px 16px rgb(0 0 0 / 0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141412;
+    --surface: #1e1d1a;
+    --surface-sunken: #0e0e0c;
+    --text: #efece6;
+    --text-muted: #a29c91;
+    --border: #36342f;
+    --accent: #5fb89c;
+    --accent-hover: #7ccbb0;
+    --accent-contrast: #0c1f19;
+    --danger: #ff8a80;
+    --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 4px 16px rgb(0 0 0 / 0.3);
+  }
+}

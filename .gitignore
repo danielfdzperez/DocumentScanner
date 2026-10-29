@@ -33,3 +33,18 @@ google-services.json
 
 # Android Profiling
 *.hprof
+
+# Web / Node (tests and local server)
+node_modules/
+npm-debug.log*
+.npmrc
+
+# Editors and OS files
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local test output (never commit)
+LocalTest/output/
+LocalTest/tmp/

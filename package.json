@@ -1,0 +1,15 @@
+{
+  "name": "document-scanner",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Boost the contrast of document photos in the browser (no dependencies).",
+  "scripts": {
+    "start": "node LocalTest/serve.mjs",
+    "test": "node LocalTest/run-tests.mjs",
+    "sample": "node LocalTest/samples/make-sample.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

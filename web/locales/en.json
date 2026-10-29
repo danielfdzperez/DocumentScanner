@@ -1,0 +1,68 @@
+{
+  "app": {
+    "title": "Document Scanner",
+    "description": "Boost the contrast of document photos right in your browser. Everything is processed on your device.",
+    "tagline": "Boost the contrast of your documents. Everything happens on your device: nothing is uploaded to any server."
+  },
+  "actions": {
+    "openImage": "Open image",
+    "camera": "Camera",
+    "stopCamera": "Close camera",
+    "takePhoto": "Take photo",
+    "showOriginal": "Show original",
+    "download": "Download",
+    "reset": "Reset",
+    "rotateLeft": "↺ Rotate left",
+    "rotateRight": "↻ Rotate right",
+    "crop": "Crop",
+    "applyCrop": "Apply crop",
+    "cancelCrop": "Cancel",
+    "restore": "Restore original"
+  },
+  "stage": {
+    "emptyTitle": "Pick an image or use the camera",
+    "emptyHint": "You can also drag an image here.",
+    "previewLabel": "Document preview",
+    "live": "Live"
+  },
+  "crop": {
+    "handle": "Crop corner {n}"
+  },
+  "panel": {
+    "presets": "Style",
+    "adjustments": "Adjustments",
+    "format": "Download format"
+  },
+  "presets": {
+    "original": "Original",
+    "document": "Document",
+    "vivid": "Vivid color",
+    "gray": "Grayscale",
+    "blackWhite": "Black & white"
+  },
+  "controls": {
+    "whiteBalance": "White balance",
+    "illumination": "Remove shadows",
+    "clahe": "Local contrast",
+    "levels": "Auto levels",
+    "contrast": "Contrast",
+    "saturation": "Saturation"
+  },
+  "status": {
+    "processing": "Processing…",
+    "loaded": "Image loaded: {width}×{height} px",
+    "saved": "Downloaded: {name}",
+    "cropHint": "Drag the 4 corners onto the edges of the document."
+  },
+  "errors": {
+    "imageLoad": "That file could not be opened as an image.",
+    "notAnImage": "The selected file is not an image.",
+    "cameraUnsupported": "This browser cannot use the camera (HTTPS or localhost is required).",
+    "cameraDenied": "Camera permission was denied. Enable it in your browser settings.",
+    "cameraNotFound": "No camera was found.",
+    "cameraFailed": "The camera could not be started.",
+    "export": "The image could not be generated for download.",
+    "cropInvalid": "The 4 points do not form a valid quadrilateral. Place them on the corners of the document.",
+    "generic": "Something went wrong. Please try again."
+  }
+}
